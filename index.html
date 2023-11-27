@@ -13,21 +13,14 @@
 </head>
 
 <script>
-document.addEventListener('DOMContentLoaded', function () {
+function playSong() {
   let audio = document.getElementById("DBZAudio");
   audio.volume = 0.4;
-  audio.muted = true;
   audio.play();
-
-  // Unmute on user interaction
-  document.addEventListener('click', function () {
-    audio.muted = false;
-  });
-});
-
+}
 </script>
 
-<body>
+<body onclick="playSong()">
   <div id="inicio" class="inicio">
     <img src="img/Logo.png" alt="LogoDBZ" class="LogoDBZ">
     <h1 class="title integrantes">Integrantes:
