@@ -13,11 +13,18 @@
 </head>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    let audio = document.getElementById("DBZAudio");
-    audio.volume = 0.4;
-    audio.play();
+document.addEventListener('DOMContentLoaded', function () {
+  let audio = document.getElementById("DBZAudio");
+  audio.volume = 0.4;
+  audio.muted = true;
+  audio.play();
+
+  // Unmute on user interaction
+  document.addEventListener('click', function () {
+    audio.muted = false;
   });
+});
+
 </script>
 
 <body>
