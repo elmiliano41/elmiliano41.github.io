@@ -12,6 +12,13 @@ function mostrarJuego() {
   juego.classList.add("animate__fadeIn");
 }
 
+function characterSelected(){
+  var elegir = document.getElementById("btnElegir");
+
+  elegir.disabled = false;
+}
+
+
 function swordPlay() {
   var audio = document.getElementById("sword");
   audio.play();
@@ -1016,13 +1023,17 @@ var wrapQues = document.getElementById("wrap-Questions");
 var character = document.getElementById("character");
 var characterwrap = document.getElementById("character-wrap");
 
+
+
 // AGREGAR PERSONAJES AL TEABLERO
 personajes.map((personaje) => {
   tablero.innerHTML += `
-    <div id="${personaje.id}" id="miDiv" class="tablero-item">
-      <img src="${personaje.img}" alt="${personaje.nombre}" />
-      <span>${personaje.nombre}</span>
-    </div>
+
+  <button id="${personaje.id}" id="miDiv" class="tablero-item">
+    <img src="${personaje.img}"  alt="${personaje.nombre}" />
+    <span>${personaje.nombre}</span>
+  </button>
+
   `;
 });
 
@@ -1032,6 +1043,7 @@ let nombreImagen;
 const divs = document.getElementsByClassName("tablero-item");
 
 function handleClick() {
+  characterSelected()
   // Desmarcar el div seleccionado previamente
   if (divSeleccionado !== null) {
     divSeleccionado.classList.remove("seleccionado");
