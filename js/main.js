@@ -3,10 +3,23 @@
 function mostrarJuego() {
   var inicio = document.getElementById("inicio");
   var juego = document.getElementById("juego");
+  var audio = document.getElementById("sword");
+  
+  audio.play();
 
   inicio.style.display = "none";
   juego.style.display = "block";
   juego.classList.add("animate__fadeIn");
+}
+
+function swordPlay() {
+  var audio = document.getElementById("sword");
+  audio.play();
+}
+
+function poweroffPlay() {
+  var audio = document.getElementById("power");
+  audio.play();
 }
 
 //PREGUNTAS DEL JUGADOR
